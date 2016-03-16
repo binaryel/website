@@ -46,7 +46,7 @@ end
 # puts "Skipping Asset precompilation... " if skip_migration
 
 set :domain, server
-set :deploy_to, '/var/app/quizup'
+set :deploy_to, '/var/app/binaryEl'
 set :repository, 'git@github.com:binaryel/website.git'
 set :branch, branch
 set :rails_env, env
