@@ -22,16 +22,16 @@ STDOUT.flush
 input = STDIN.gets.chomp
 case input.upcase
   when "1"
-    server = 'ec2-54-187-93-74.us-west-2.compute.amazonaws.com' # this is development instance
-    server_uri = 'ec2-54-187-93-74.us-west-2.compute.amazonaws.com'
+    server = 'ec2-52-37-228-0.us-west-2.compute.amazonaws.com' # this is development instance
+    server_uri = 'ec2-52-37-228-0.us-west-2.compute.amazonaws.com'
     env = 'development' # the dev server is in test env
   when "2"
-    server = 'ec2-54-187-93-74.us-west-2.compute.amazonaws.com'
-    server_uri = 'ec2-54-187-93-74.us-west-2.compute.amazonaws.com'
+    server = 'ec2-52-37-228-0.us-west-2.compute.amazonaws.com'
+    server_uri = 'ec2-52-37-228-0.us-west-2.compute.amazonaws.com'
     env = 'staging'  # the dev server is in test env
   when "3"
-    server = 'ec2-54-187-93-74.us-west-2.compute.amazonaws.com' # this is staging instance
-    server_uri = 'ec2-54-187-93-74.us-west-2.compute.amazonaws.com'
+    server = 'ec2-52-37-228-0.us-west-2.compute.amazonaws.com' # this is staging instance
+    server_uri = 'ec2-52-37-228-0.us-west-2.compute.amazonaws.com'
     env = 'production'
     branch = "master" # Only master to be deployed on staging.
   else
@@ -47,7 +47,7 @@ end
 
 set :domain, server
 set :deploy_to, '/var/app/quizup'
-set :repository, 'git@github.com:kingtrivs27/quizapp.git'
+set :repository, 'git@github.com:binaryel/website.git'
 set :branch, branch
 set :rails_env, env
 
@@ -71,7 +71,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  invoke :'rvm:use[ruby-2.2.0@sleek_poaster]'
+  invoke :'rvm:use[ruby-2.3.0@binaryEl]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
